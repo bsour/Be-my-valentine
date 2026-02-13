@@ -716,44 +716,60 @@ body::before {
 /* GIF OPTIONS */
 .gif-options {
     display: flex;
-    gap: 2rem;
-    justify-content: center;
+    gap: 1rem;
     margin: 2rem 0;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .gif-option {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(255, 105, 180, 0.2));
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .gif-option:hover {
-    transform: scale(1.05) translateY(-5px);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
 }
 
 .option-gif {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    max-height: 180px;
     object-fit: cover;
-    border-radius: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 8px 25px rgba(232, 50, 90, 0.3);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .option-label {
-    margin-top: 1rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--rose);
+    font-size: 0.95rem;
     font-weight: 600;
+    color: #d63384;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+    word-break: break-word;
 }
 
 .no-message {
-    font-family: 'Caveat', cursive;
-    font-size: 1.2rem;
-    color: var(--rose);
+    font-size: 1rem;
+    color: #d63384;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1.5rem;
     min-height: 1.5rem;
-    margin-top: 1rem;
 }
 
 /* CONTRACT */
