@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="petal-bg" id="petalBg"></div>
+
+    <div class="card">
+        <!-- QUESTION SCREEN -->
+        <div id="question-screen" class="screen active">
+            <div class="badge">💕 Quick Question</div>
+            <h1 class="card-title">Before We Continue...</h1>
+            <p class="card-sub">I need to know something important</p>
+            <div class="question-box">
+                <p class="question">Are you single?</p>
+            </div>
+            <div class="button-container">
+                <button id="yes-btn" class="btn btn-yes">Yes</button>
+                <button id="no-btn" class="btn btn-no">No</button>
+            </div>
+        </div>
+
+        <!-- SIDE EYE SCREEN -->
+        <div id="side-eye-screen" class="screen">
+            <div class="screenshot-moment" id="screenshotMoment">
+                <div class="camera-icon">📸</div>
+                <h1 class="proof-title">I've Got Proof!</h1>
+                <p class="proof-sub">Screenshot saved forever 😏</p>
+            </div>
+        </div>
+
+        <!-- AWW SCREEN -->
+        <div id="aww-screen" class="screen">
+            <div class="badge">🥰 Aww!</div>
+            <h1 class="card-title">That's What I Thought!</h1>
+            <p class="card-sub">You're taken... by me 💖</p>
+            <div id="aww-container">
+                <img src="https://media.giphy.com/media/3oEjI4sFlp73fvEYgw/giphy.gif" alt="Cute aww gif" class="single-gif">
+            </div>
+            <button class="whats-next-btn" onclick="goToValentine()">What's Next? 💕</button>
+        </div>
+
+        <!-- VALENTINE QUESTION SCREEN -->
+        <div id="valentine-screen" class="screen">
+            <div class="badge">💝 The Big Question</div>
+            <h1 class="card-title">Will You Be My Valentine?</h1>
+            <p class="card-sub">Choose wisely... 😏</p>
+            <div class="gif-options">
+                <div class="gif-option" onclick="valentineYes()">
+                    <img src="https://media.giphy.com/media/G96zgIcQn1L2xpmdxi/giphy.gif" alt="Yes" class="option-gif">
+                    <p class="option-label">Yes! 💖</p>
+                </div>
+                <div class="gif-option" id="noOption" onclick="valentineNo()">
+                    <img src="https://media.giphy.com/media/1zSz5MVw4zKg0/giphy.gif" alt="No" class="option-gif">
+                    <p class="option-label">Nope 🙅‍♀️</p>
+                </div>
+            </div>
+            <div id="noMessage" class="no-message"></div>
+        </div>
+
+        <!-- CONTRACT SCREEN -->
+        <div id="contract-screen" class="screen">
+            <div class="badge">📜 Official Document</div>
+            <h1 class="card-title">Valentine's Day Contract</h1>
+            <p class="card-sub">Please review and sign below</p>
+            
+            <div class="contract-box">
+                <h3 class="contract-title">BINDING VALENTINE'S AGREEMENT</h3>
+                <div class="contract-content">
+                    <p><strong>This Agreement</strong> is entered into on this day of Valentine's, 2025</p>
+                    <p><strong>BETWEEN:</strong> Sourabh (hereinafter "The Valentine")</p>
+                    <p><strong>AND:</strong> You (hereinafter "The Lucky One")</p>
+                    
+                    <p class="contract-section"><strong>TERMS & CONDITIONS:</strong></p>
+                    <ul>
+                        <li>The Lucky One agrees to be Sourabh's Valentine, effective immediately and indefinitely.</li>
+                        <li>The Lucky One acknowledges that Sourabh is, objectively speaking, a catch.</li>
+                        <li>The Lucky One agrees to laugh at Sourabh's jokes, even the bad ones (especially the bad ones).</li>
+                        <li>The Lucky One will accept random food offerings, surprise hugs, and unsolicited compliments.</li>
+                        <li>The Lucky One agrees that Sourabh gets to pick the movie at least 40% of the time.</li>
+                        <li>Both parties agree to share snacks (but Sourabh gets the last bite).</li>
+                        <li>The Lucky One acknowledges this is the best decision they've ever made.</li>
+                        <li>This contract is non-negotiable, non-refundable, and absolutely ridiculous.</li>
+                    </ul>
+                    
+                    <p class="contract-footer">By signing below, you agree to all terms and accept that you're stuck with me now. 😘</p>
+                </div>
+                
+                <div class="signature-section">
+                    <label>Your Signature:</label>
+                    <canvas id="signatureCanvas" class="signature-canvas"></canvas>
+                    <div class="signature-buttons">
+                        <button class="btn-secondary" onclick="clearSignature()">Clear</button>
+                        <button class="btn btn-yes" onclick="downloadContract()">Sign & Download 📥</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLOWER SCREEN -->
+        <div id="flower-screen" class="screen">
+            <div class="badge">🌹 Sealed with Love</div>
+            <h1 class="card-title">You're Officially Mine!</h1>
+            <p class="card-sub">Contract signed, sealed, delivered 💕</p>
+            
+            <div class="flower-scene" id="flowerScene">
+                <div class="flower-glow"></div>
+                <div class="stem"></div>
+                <div class="leaf-l"></div>
+                <div class="leaf-r"></div>
+                <div class="flower-head" id="flowerHead"></div>
+            </div>
+            
+            <p class="final-message">Happy Valentine's Day, my love! ❤️</p>
+            
+            <button class="naughty-btn" onclick="showNaughty()">
+                Wanna see what comes next? 😈
+            </button>
+        </div>
+    </div>
+
+    <!-- NAUGHTY SCREEN (outside card) -->
+    <div id="naughty-screen" class="screen naughty-dark">
+        <div class="naughty-gif-container">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTh5Z2lxNTN3ZWUxYmR1dHdzbmtyMzFyZWt1b3M2bTVnb21wZTlhYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aLt6yXDfZlWaA/giphy.gif" alt="Sexy time" class="naughty-gif">
+        </div>
+        <button class="home-btn" onclick="goBackHome()">Home</button>
+    </div>
+
+    <div id="side-eye-container"></div>
+    <div class="confetti-wrap" id="confettiWrap"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
