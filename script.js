@@ -17,18 +17,10 @@ const reactionGifs = {
         'https://media.giphy.com/media/cQtlhD48EG0SY/giphy.gif',
         'https://media.giphy.com/media/l4FATJpd4LWgeruTK/giphy.gif',
     ],
-    disappointed: [
-        'https://media.giphy.com/media/3o7TKwmnDgQb5jemjK/giphy.gif',
-        'https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif',
-    ],
     judging: [
         'https://media.giphy.com/media/l0HlPystfePnAI3G8/giphy.gif',
         'https://media.giphy.com/media/KGSxFwJJHQPsKzzFba/giphy.gif',
         'https://media.giphy.com/media/3ohzdMvc1w2VlFOpRC/giphy.gif',
-    ],
-    bye: [
-        'https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif',
-        'https://media.giphy.com/media/l3q2uvcxdk1pDLzGM/giphy.gif',
     ],
     shocked: [
         'https://media.giphy.com/media/l3q2XhfQ8oCkm1Ts4/giphy.gif',
